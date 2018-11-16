@@ -20,3 +20,8 @@ for df in l:
 meansdf = pd.DataFrame(means)
 meansdf["Year"] = meansdf.Year.astype(int)
 meansdf = meansdf.set_index('Year')
+
+sns.set(style='darkgrid')
+sns_plot = sns.lineplot(meansdf.index,"PTS", data=meansdf)
+fig = sns_plot.get_figure()
+fig.savefig("Points Averages")
